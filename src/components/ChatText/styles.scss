@@ -1,4 +1,23 @@
-.ChatText {
-  color: blue;
+.Chat {
   list-style: none;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  background: hsla(0, 0%, 0%, 0.65);
+
+  &:hover {
+    justify-content: space-around;
+  }
+}
+
+.userInfo {
+  display: flex;
+  justify-content: center;
+
+  img:hover {
+    margin: 100px;
+  }
 }

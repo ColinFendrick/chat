@@ -6,6 +6,4 @@ const app = firebase.initializeApp({
   databaseURL: 'https://colin-chat.firebaseio.com'
 })
 
-const provider = new firebase.auth.TwitterAuthProvider()
-
 export default app.database()

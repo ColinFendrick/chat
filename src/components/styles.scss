@@ -1,8 +1,8 @@
-.App {
-  color: green;
+h1 {
+  background: linear-gradient(to right, hsl(199, 84%, 33%), transparent);
 }
 
-.chatboxes {
+.chatbox {
   display: flex;
   justify-content: space-around;
 }

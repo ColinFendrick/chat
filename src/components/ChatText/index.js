@@ -5,13 +5,18 @@ import store from '../../store'
 import _ from 'lodash'
 
 const ChatText = () => {
-  const list = _.map(store.chat.items, ({ text }, key) => (
+  const list = _.map(store.chat.items, ({ text, userColor, userChatColor }, key) => (
     <li key={key}>
-      {text}
+      <p className={styles.userInfo}
+        style={{color: `${userColor}`}}>
+        {store.username}
+        <img src={store.photo} />
+      </p>
+      <p style={{color: `${userChatColor}`}}>{text}</p>
     </li>
   ))
 
-  return <ul className={styles.ChatText}>
+  return <ul className={styles.Chat}>
     {list}
   </ul>
 }

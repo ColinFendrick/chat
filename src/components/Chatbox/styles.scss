@@ -1,9 +1,21 @@
 .Chatbox {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  color: red;
   background-color: grey;
-  height: stretch;
-  width: 200px;
+  height: 100%;
+  width: 600px;
+}
+
+input {
+  margin-left: 80px;
+  background: green;
+  border: 0;
+
+  &:hover {
+    margin-left: 200px;
+  }
+
+  &:focus {
+    margin-top: 22px;
+  }
 }

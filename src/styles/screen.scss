@@ -10,4 +10,6 @@ html {
 body {
   margin: 0;
   font: $base-text-size / 1 $base-font-family;
+  background: linear-gradient(to left, hsl(199, 84%, 33%), transparent);
+  cursor: crosshair;
 }

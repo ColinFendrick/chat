@@ -3,10 +3,12 @@ import db from './db'
 
 class Store {
   @observable chat = {
-    id: {
-      items: {}
-    }
+    items: {}
   }
+  @observable username
+  @observable photo
+  @observable userColor
+  @observable userChatColor
 
   load = () => {
     db.ref('items').on('value', snapshot => {
@@ -15,7 +17,10 @@ class Store {
   }
 
   addItem (text) {
-    db.ref('items').push().set({ text })
+    db.ref('items').push().set({ text,
+      username: this.username,
+      userColor: this.userColor,
+      userChatColor: this.userChatColor})
     this.load()
   }
 }

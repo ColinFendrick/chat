@@ -14,22 +14,17 @@ class App extends Component {
   provider = new firebase.auth.TwitterAuthProvider()
 
   popUp = firebase.auth().signInWithPopup(this.provider).then(result => {
-    let token = result.credential.accessToken
-    let secret = result.credential.secret
-    let user = result.user
-  }).catch(error => {
-    let errorCode = error.code
-    let errorMessage = error.message
-    let email = error.email
-    let credential = error.credential
+    store.username = result.user.displayName
+    store.photo = result.user.photoURL
+    store.userColor = `#${result.credential.accessToken.substr(0, 6)}`
+    store.userChatColor = `#${result.credential.accessToken.substr(7, 6)}`
   })
 
   render () {
     return <div className={styles.App}>
       <h1>AOL Chat Room</h1>
-      <div className={styles.chatboxes}>
-        <Chatbox id='colin' />
-        <Chatbox id='dummy guy' />
+      <div className={styles.chatbox}>
+        <Chatbox />
       </div>
     </div>
   }
