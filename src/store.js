@@ -1,4 +1,4 @@
-import { observable } from 'mobx'
+import { observable, action } from 'mobx'
 import db from './db'
 
 class Store {
@@ -10,13 +10,13 @@ class Store {
   @observable userColor
   @observable userChatColor
 
-  load = () => {
+  @action load = () => {
     db.ref('items').on('value', snapshot => {
       this.chat = {items: snapshot.val()}
     })
   }
 
-  addItem (text) {
+  @action addItem (text) {
     db.ref('items').push().set({ text,
       username: this.username,
       userColor: this.userColor,
